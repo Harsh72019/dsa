@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sqrtx/
-public class sqrt {
+public class Sqrt {
     public int mySqrt(int x) {
         long start = 0, end = x/2;
         if(x == 1){
