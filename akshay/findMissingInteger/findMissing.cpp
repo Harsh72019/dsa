@@ -1,11 +1,7 @@
-# First Missing Integer
+#include<bits/stdc++.h>
+using namespace std;
 
-Given an unsorted integer array, find the first missing positive integer.
-
-
-
-
-int Solution::firstMissingPositive(vector<int> &A) {
+int firstMissingPositive(vector<int> &A) {
     // int n = A.size();
     //  int sumOfn = (n*(n+1))/2;
     //  int innerSum = 0;
