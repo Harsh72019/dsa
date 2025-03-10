@@ -24,12 +24,13 @@
 // and 1 is the number of occurences for element 4. But, 2 comes first because 3 is smaller than 4.
 
 
+#include<bits/stdc++.h>
+using namespace std;
 
 
 
 
-
-vector<int> Solution::findOccurences(vector<int> &A) {
+vector<int> findOccurences(vector<int> &A) {
     
     vector<int> ans;
  map<int, int> mp;
@@ -42,7 +43,6 @@ vector<int> Solution::findOccurences(vector<int> &A) {
  }
  
  return ans; 
-     
      
      
      
