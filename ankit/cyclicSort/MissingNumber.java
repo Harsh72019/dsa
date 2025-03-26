@@ -6,10 +6,9 @@ public  class MissingNumber {
     public int missingNumber(int[] nums) {
         int index = 0;
         while(index < nums.length){
-            if(index != nums[index] && nums[index] < nums.length){
-                int temp = nums[index];
-                nums[index] = nums[temp];
-                nums[temp] = temp;
+            int correct = nums[index];
+            if(nums[index] < nums.length && nums[correct] != nums[index]){
+                swap(nums,index,correct);
             }else{
                 index++;
             }
@@ -21,6 +20,16 @@ public  class MissingNumber {
             }
         }
 
+
+
         return nums.length;
     }
+
+    public static void swap(int[]arr , int first , int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
 }
+
+
