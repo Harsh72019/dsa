@@ -35,17 +35,20 @@ int getMiniMax(vector<int>& locations, int cows) {
 
 int main() {
     int testCases;
+    cout<<"Enter number of test Cases"<<endl;
     cin >> testCases;
 
     while (testCases--) {
         int locationsCount, cows;
+        cout<<"Enter locationCount and cows space seperated"<<endl;
         cin >> locationsCount >> cows;
         vector<int> locations(locationsCount);
-
+        cout<<"Enter "<<locationsCount<<" location points"<<endl;
         for (int i = 0; i < locationsCount; i++)
             cin >> locations[i];
 
         sort(locations.begin(), locations.end());  
+        cout<<"Outpur for test case "<<testCases + 1<<endl;
         int ans = getMiniMax(locations, cows);
         cout << ans << endl;
     }
