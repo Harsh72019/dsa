@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class MyQueue {
     public:
         stack<int> s1;
