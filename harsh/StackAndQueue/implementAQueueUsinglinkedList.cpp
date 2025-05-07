@@ -87,6 +87,6 @@ int main() {
     q.pop();
 
     q.pop();  // Queue is empty
-
+ 
     return 0;
 }
