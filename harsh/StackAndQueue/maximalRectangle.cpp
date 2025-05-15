@@ -1,31 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// My brute force approach
-// Time complexity: O(n^2)
+
   int largestRectangleArea(vector<int>& heights) {
-        int ans = 0;
-        int n = heights.size();
-
-        for (int i = 0; i < n; i++) {
-            int height = heights[i];
-            int left = i;
-            int right = i;
-
-            while (left >= 0 && heights[left] >= height) left--;
-
-            while (right < n && heights[right] >= height) right++;
-
-            int width = right - left - 1;
-            ans = max(ans, width * height);
-        }
-
-        return ans;
-    }
-
-// Optimized approach using stack
-// Time complexity: O(n)
-     int largestRectangleArea(vector<int>& heights) {
         int n = heights.size();
         stack<pair<int, int>> st;  
         int maxArea = 0;
@@ -39,7 +16,7 @@ using namespace std;
                 st.pop();
                 int width = i - index;
                 maxArea = max(maxArea, height * width);
-                start = index;  
+                start = index;
             }
 
             st.push({start, heights[i]});
@@ -54,4 +31,29 @@ using namespace std;
         }
 
         return maxArea;
+    }
+
+    int maximalRectangle(vector<vector<char>>& matrix) {
+        if (matrix.empty() || matrix[0].empty()) return 0;
+
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        vector<vector<int>> dummy(rows, vector<int>(cols, 0));
+
+        for (int j = 0; j < cols; j++) {
+            dummy[0][j] = (matrix[0][j] == '1') ? 1 : 0;
+        }
+
+        for (int i = 1; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                dummy[i][j] = (matrix[i][j] == '1') ? dummy[i - 1][j] + 1 : 0;
+            }
+        }
+
+        int ans = 0;
+        for (int i = 0; i < rows; i++) {
+            ans = max(ans, largestRectangleArea(dummy[i]));
+        }
+
+        return ans;
     }
