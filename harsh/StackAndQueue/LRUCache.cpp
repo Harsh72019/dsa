@@ -54,6 +54,7 @@ public:
             insertAtFront(node);
             return node->value;
         }
+        return -1;
     }
     void put(int key, int value)
     {
