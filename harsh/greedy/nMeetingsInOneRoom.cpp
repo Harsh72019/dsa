@@ -5,12 +5,10 @@ using namespace std;
         int n = start.size();
         vector<pair<int, int>> meetings;
 
-        // Pair: {end time, start time}
         for (int i = 0; i < n; i++) {
             meetings.push_back({end[i], start[i]});
         }
 
-        // Sort meetings by end time (greedy)
         sort(meetings.begin(), meetings.end());
 
         int count = 0;
