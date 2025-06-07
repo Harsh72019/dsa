@@ -3,7 +3,7 @@
 using namespace std;
 
 struct TreeNode {
-    int val;
+    int data;
     TreeNode *left;
     TreeNode *right;
     TreeNode() : data(0), left(nullptr), right(nullptr) {}
