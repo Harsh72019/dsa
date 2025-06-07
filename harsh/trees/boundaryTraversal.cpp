@@ -43,8 +43,8 @@ struct TreeNode {
         vector<int> rightHalf;
         solveRight(root->right , rightHalf , true);
         reverse(rightHalf.begin() , rightHalf.end());
-     leftHalf.insert(leftHalf.end()  , rightHalf.begin() , rightHalf.end());
-    return leftHalf;      
+        leftHalf.insert(leftHalf.end()  , rightHalf.begin() , rightHalf.end());
+        return leftHalf;      
     }
 
 
@@ -52,12 +52,12 @@ struct TreeNode {
 
     //    create a tree like this  [1, 2, null, 4, 9, 6, 5, 3, null, null, null, null, null, 7, 8]
 
-TreeNode* root = new TreeNode(1);
-root->left = new TreeNode(2);
-root->right = new TreeNode(3);
-root->left->left = new TreeNode(4);
-root->left->right = new TreeNode(5);
-root->right->right = new TreeNode(6);
+        TreeNode* root = new TreeNode(1);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(3);
+        root->left->left = new TreeNode(4);
+        root->left->right = new TreeNode(5);
+        root->right->right = new TreeNode(6);
 
         vector<int> ans = boundary(root);
         for(int i=0;i<ans.size();i++)
