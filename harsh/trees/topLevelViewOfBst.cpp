@@ -25,8 +25,33 @@ void dfs(TreeNode* root, int col, map<int, int>& topViewMap) {
         dfs(root, 0, topViewMap);
 
         vector<int> result;
-        for (auto& [col, val] : topViewMap)
-            result.push_back(val);
-
+        for (auto it = topViewMap.begin(); it != topViewMap.end(); ++it) {
+            result.push_back(it->second);
+}
         return result;
+    }
+
+    
+    int main(){
+        // Create a tree like this
+    //       1
+    //  /   \
+    // 2     3
+    //  \   / \
+    //   4 5   6
+
+        TreeNode* root = new TreeNode(1);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(3);
+        root->left->right = new TreeNode(4);
+        root->right->left = new TreeNode(5);
+        root->right->right = new TreeNode(6);
+
+       
+
+        vector<int> ans = topView(root);
+        for(int i=0;i<ans.size();i++){
+                cout<<ans[i]<<" ";
+        }
+        return 0;
     }
