@@ -45,3 +45,35 @@ void helper(TreeNode* root, vector<int>& preorder, vector<int>& inorder) {
         helper(root, preorder, inorder);
         return root;
     }
+
+
+// Better approach
+    class Solution {
+public:
+    TreeNode* helper(unordered_map<int, int>& um, vector<int>& preorder, int preStart, int preEnd,
+                     vector<int>& inorder, int inStart, int inEnd) {
+        if (preStart > preEnd || inStart > inEnd)
+            return nullptr;
+
+        TreeNode* root = new TreeNode(preorder[preStart]);
+        int inRootIndex = um[preorder[preStart]];
+        int numsLeft = inRootIndex - inStart;
+
+        root->left = helper(um, preorder, preStart + 1, preStart + numsLeft,
+                            inorder, inStart, inRootIndex - 1);
+        
+        root->right = helper(um, preorder, preStart + numsLeft + 1, preEnd,
+                             inorder, inRootIndex + 1, inEnd);
+
+        return root;
+    }
+
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        unordered_map<int, int> um;
+        for (int i = 0; i < inorder.size(); i++) {
+            um[inorder[i]] = i;
+        }
+        return helper(um, preorder, 0, preorder.size() - 1,
+                      inorder, 0, inorder.size() - 1);
+    }
+};
