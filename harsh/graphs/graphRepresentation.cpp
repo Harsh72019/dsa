@@ -1,6 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// If there is a weighted graph, you can use a pair<int, int> to represent the edge with weight.
+// For example, to represent an edge from vertex v to vertex w with weight weight, you can use:
+// In adjacency matrix representation, you can use a 2D vector where the value at matrix[v][w] represents the weight of the edge from v to w.
+
+
 class Graph {
 public:
     int V; 
