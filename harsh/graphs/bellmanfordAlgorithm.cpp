@@ -15,7 +15,7 @@ vector<int> bellmanFord(int V, vector<vector<pair<int, int>>> &adj, int src)
             {
                 int adjNode = it.first;
                 int adjDistance = it.second;
-                if(dist[j] + adjDistance < dist[adjNode]  && dist[j] != INT_MAX)
+                if(dist[j] != INT_MAX && dist[j] + adjDistance < dist[adjNode])
                 {
                     dist[adjNode] = dist[j] + adjDistance;
                 }
