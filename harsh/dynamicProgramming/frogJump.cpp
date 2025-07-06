@@ -14,6 +14,7 @@ int solver(vector<int> & heights , int index,  vector<int>& dp)
 
 }
 
+// heights = [2, 1, 3, 5, 4]
 int frogJump(vector<int>& heights) {
         int n = heights.size();
         vector<int> dp(n , -1);
