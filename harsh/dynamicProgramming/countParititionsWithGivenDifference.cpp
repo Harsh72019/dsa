@@ -35,4 +35,4 @@ int countPartitions(int n, int d, vector<int> &arr)
     vector<vector<int>> dp(n, vector<int>(target + 1, -1));
 
     return countSubsets(n - 1, target, arr, dp);
-}
+} 
