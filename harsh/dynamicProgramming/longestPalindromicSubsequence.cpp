@@ -1,22 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int solver(int i, int j, string &s, vector<vector<int>> &dp)
+int solver(int left , int right , string s , vector<vector<int>>& dp)
 {
-    if (i > j)
-        return 0;
-    if (i == j)
-        return 1;
-
-    if (dp[i][j] != -1)
-        return dp[i][j];
-
-    if (s[i] == s[j])
-        dp[i][j] = 2 + solver(i + 1, j - 1, s, dp);
-    else
-        dp[i][j] = max(solver(i + 1, j, s, dp), solver(i, j - 1, s, dp));
-
-    return dp[i][j];
+    if(left > right) return 0;
+    if(left == right) return 1;
+    if(dp[left][right] != -1)   return dp[left][right];
+    if(s[left] == s[right])
+    {
+        return dp[left][right] = 2 + solver(left + 1 , right - 1 , s , dp);
+    }
+    else{
+        return dp[left][right] = max(solver(left + 1 , right  , s , dp) , solver(left , right - 1 , s , dp));
+    }
 }
 
 int longestPalindromeSubseq(string s)
