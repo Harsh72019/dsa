@@ -14,4 +14,4 @@ public:
         ans = fmin(ans, (long long)max * costBoth);
         return ans;
     }
-};
+}; 
