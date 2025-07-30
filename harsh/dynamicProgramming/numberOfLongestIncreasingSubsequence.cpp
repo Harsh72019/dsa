@@ -19,4 +19,4 @@ int findNumberOfLIS(vector<int>& nums) {
             if(size[i] == maxSize) ans += freq[i];
         }
         return ans;
-    }
+    } 
