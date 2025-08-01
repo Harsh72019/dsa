@@ -14,7 +14,7 @@ int findNumberOfLIS(vector<int>& nums) {
             }
         }
         int maxSize = *max_element(size.begin(), size.end());
-        int ans = 0;
+        int ans = 0; 
         for(int i=0; i<n; i++){
             if(size[i] == maxSize) ans += freq[i];
         }
