@@ -1,17 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string longestPrefix(string &s)
+string longestPrefix(string s)
 {
-    long h1 = 0, h2 = 0, mul = 1, len = 0, mod = 1000000007;
-    for (int i = 0, j = s.length() - 1; j > 0; ++i, --j)
+    vector<int> pi(s.size(), 0);
+    for (int i = 1; i < s.size(); i++)
     {
-        int first = s[i] - 'a', last = s[j] - 'a';
-        h1 = (h1 * 26 + first) % mod;
-        h2 = (h2 + mul * last) % mod;
-        mul = mul * 26 % mod;
-        if (h1 == h2)
-            len = i + 1;
+        int j = pi[i - 1];
+        while (j > 0 and s[i] != s[j])
+        {
+            j = pi[j - 1];
+        }
+        if (s[i] == s[j])
+        {
+            ++j;
+        }
+        pi[i] = j;
     }
-    return s.substr(0, len);
+    int longest = pi.back();
+    return longest > 0 ? s.substr(0, longest) : "";
 }
