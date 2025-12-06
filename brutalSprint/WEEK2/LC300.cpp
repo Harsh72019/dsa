@@ -25,3 +25,13 @@ int lengthOfLIS(vector<int> &nums)
     vector<vector<int>> dp(n, vector<int>(n + 1, -1));
     return solver(nums, 0, -1, dp);
 }
+
+int lengthOfLIS(vector<int>& nums) {
+        vector<int> tails; 
+        for (int x : nums) {
+            auto it = lower_bound(tails.begin(), tails.end(), x);
+            if (it == tails.end()) tails.push_back(x);
+            else *it = x;
+        }
+        return (int)tails.size();
+    }
