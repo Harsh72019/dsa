@@ -27,7 +27,7 @@ int shortestPath(vector<vector<int>> &grid, int k)
 
         if (row == rows - 1 && col == cols - 1) 
             return length;
-
+ 
         for (int i = 0; i < 4; i++)
         {
             int nRow = row + dx[i];
