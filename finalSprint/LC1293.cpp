@@ -25,7 +25,7 @@ int shortestPath(vector<vector<int>> &grid, int k)
         int remainingK = get<3>(ele);
         q.pop();
 
-        if (row == rows - 1 && col == cols - 1)
+        if (row == rows - 1 && col == cols - 1) 
             return length;
 
         for (int i = 0; i < 4; i++)
