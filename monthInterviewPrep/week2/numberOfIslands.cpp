@@ -25,7 +25,7 @@ public:
             for(int col = 0 ; col < cols ; col++) 
             {
                 if(grid[row][col] == '1')
-                {
+                { 
                     traverseIsland(grid , row , col);
                     numOfIslands++;
                 }
