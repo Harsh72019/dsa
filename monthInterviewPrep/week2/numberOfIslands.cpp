@@ -22,7 +22,7 @@ public:
         int numOfIslands = 0;
         for(int row = 0 ; row < rows ; row++) 
         {
-            for(int col = 0 ; col < cols ; col++)
+            for(int col = 0 ; col < cols ; col++) 
             {
                 if(grid[row][col] == '1')
                 {
