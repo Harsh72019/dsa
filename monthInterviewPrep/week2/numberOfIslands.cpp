@@ -20,7 +20,7 @@ public:
         int rows = grid.size();
         int cols = grid[0].size();
         int numOfIslands = 0;
-        for(int row = 0 ; row < rows ; row++)
+        for(int row = 0 ; row < rows ; row++) 
         {
             for(int col = 0 ; col < cols ; col++)
             {
